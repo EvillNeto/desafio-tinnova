@@ -11,6 +11,10 @@ import jakarta.persistence.criteria.Predicate;
 
 public class VehicleSpecification {
 
+    private VehicleSpecification(){
+        throw new IllegalStateException("Utility class");
+    }
+
     public static Specification<Vehicle> filter(VehicleFilter filter) {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
