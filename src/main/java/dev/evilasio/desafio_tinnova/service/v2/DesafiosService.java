@@ -6,4 +6,6 @@ import dev.evilasio.desafio_tinnova.domain.form.VotosForm;
 public interface DesafiosService {
 
     public VotosDto votosLogic(VotosForm form);
+
+    public int[] bubbleSort(int[] intArray);
 }

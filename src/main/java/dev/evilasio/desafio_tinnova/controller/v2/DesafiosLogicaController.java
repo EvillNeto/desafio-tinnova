@@ -25,9 +25,9 @@ public class DesafiosLogicaController {
     }
 
     @PostMapping("/bubble-sort")
-    public ResponseEntity<Object> bubbleSort() {
+    public ResponseEntity<Object> bubbleSort(@RequestBody() int[] intArray) {
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(desafiosService.bubbleSort(intArray));
     }
 
     @PostMapping("/fatorial")
