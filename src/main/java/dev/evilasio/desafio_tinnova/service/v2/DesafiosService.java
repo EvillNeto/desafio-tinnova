@@ -1,0 +1,9 @@
+package dev.evilasio.desafio_tinnova.service.v2;
+
+import dev.evilasio.desafio_tinnova.domain.dto.VotosDto;
+import dev.evilasio.desafio_tinnova.domain.form.VotosForm;
+
+public interface DesafiosService {
+
+    public VotosDto votosLogic(VotosForm form);
+}

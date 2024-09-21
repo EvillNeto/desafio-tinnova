@@ -2,9 +2,14 @@ package dev.evilasio.desafio_tinnova.controller.v2;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.evilasio.desafio_tinnova.domain.dto.VotosDto;
+import dev.evilasio.desafio_tinnova.domain.form.VotosForm;
+import dev.evilasio.desafio_tinnova.service.v2.DesafiosService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -12,10 +17,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class DesafiosLogicaController {
 
-    @PostMapping("/votos")
-    public ResponseEntity<Object> votos() {
+    private final DesafiosService desafiosService;
 
-        return ResponseEntity.ok(null);
+    @PostMapping("/votos")
+    public ResponseEntity<VotosDto> votos(@RequestBody @Valid VotosForm form) {
+        return ResponseEntity.ok(desafiosService.votosLogic(form));
     }
 
     @PostMapping("/bubble-sort")
