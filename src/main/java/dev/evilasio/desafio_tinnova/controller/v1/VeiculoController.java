@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.evilasio.desafio_tinnova.domain.dto.VehicleDto;
 import dev.evilasio.desafio_tinnova.domain.filter.VehicleFilter;
 import dev.evilasio.desafio_tinnova.domain.form.VehicleForm;
-import dev.evilasio.desafio_tinnova.service.v5.VehicleService;
+import dev.evilasio.desafio_tinnova.service.v1.VehicleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
