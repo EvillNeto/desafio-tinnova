@@ -1,4 +1,4 @@
-package dev.evilasio.desafio_tinnova.controller.v5;
+package dev.evilasio.desafio_tinnova.controller.v1;
 
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
@@ -24,7 +24,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/v5")
+@RequestMapping("/v1")
 @RequiredArgsConstructor
 public class VeiculoController {
 
