@@ -53,7 +53,7 @@ public class VeiculoController {
     }
 
     @PatchMapping("/veiculos/{id}")
-    public ResponseEntity<VehicleDto> parcialUpdate(@PathVariable Long id, @RequestBody VehicleForm form) {
+    public ResponseEntity<VehicleDto> partialUpdate(@PathVariable Long id, @RequestBody VehicleForm form) {
         return ResponseEntity.ok(VehicleDto.toDto(vehicleService.partialUpdate(id, form)));
     }
 
