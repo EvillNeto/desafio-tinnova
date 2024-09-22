@@ -33,6 +33,9 @@ public class VehicleSpecification {
                 if (filter.getVendido() != null) {
                     predicates.add(criteriaBuilder.equal(root.get("vendido"), filter.getVendido()));
                 }
+                if (filter.getCadastroApartirDe() != null) {
+                    predicates.add(criteriaBuilder.greaterThan(root.get("createdAt"), filter.getCadastroApartirDe().atStartOfDay()));
+                }
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));

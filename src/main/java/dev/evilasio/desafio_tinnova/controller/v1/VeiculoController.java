@@ -31,7 +31,7 @@ public class VeiculoController {
 
     private final VehicleService vehicleService;
 
-    @Operation(summary = "Busca paginada de veiculos", description = "Recebe valores de filtro e paginação. Retorna uma pagina filtrada dos veiculos registrados")
+    @Operation(summary = "Busca paginada de veiculos", description = "Recebe valores de filtro e paginação. Retorna uma pagina filtrada dos veiculos registrados. Data informada deve ser no formato 'yyyy-MM-dd'")
     @GetMapping("/veiculos")
     public ResponseEntity<Page<VehicleDto>> getAll(@ParameterObject VehicleFilter filter,
             @ParameterObject @PageableDefault(page = 0, size = 20) Pageable pageable) {
