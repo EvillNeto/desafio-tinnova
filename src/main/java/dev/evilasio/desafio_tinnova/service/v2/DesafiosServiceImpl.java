@@ -39,4 +39,16 @@ public class DesafiosServiceImpl implements DesafiosService {
         }
         return intArray;
     }
+
+    @Override
+    public int fatorial(int valor) {
+        int result=1;
+
+        while (valor>0) {
+            result*=valor;
+            valor--;
+        }
+        
+        return result;
+    }
 }

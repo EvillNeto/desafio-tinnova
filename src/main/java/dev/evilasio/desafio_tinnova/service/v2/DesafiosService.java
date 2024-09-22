@@ -8,4 +8,6 @@ public interface DesafiosService {
     public VotosDto votosLogic(VotosForm form);
 
     public int[] bubbleSort(int[] intArray);
+
+    public int fatorial(int valor);
 }

@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.evilasio.desafio_tinnova.domain.dto.VotosDto;
@@ -31,9 +32,9 @@ public class DesafiosLogicaController {
     }
 
     @PostMapping("/fatorial")
-    public ResponseEntity<Object> fatorial() {
+    public ResponseEntity<Object> fatorial(@RequestParam int valor) {
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(desafiosService.fatorial(valor));
     }
 
     @PostMapping("/multiplos")
