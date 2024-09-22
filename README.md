@@ -8,7 +8,12 @@
 
 ### :rocket: Setup
 - é recomendado possuir uma versão do Java igual ou superior a 17, pois a api utiliza o Java 17
-- A api vem com todas as configurações prontas para a porta 8080 e só é necessario lançala pela sua IDE de preferencia ou atraves do terminal
+- A api vem com todas as configurações prontas para a porta 8080
+- Rodar o projeto pode ser feito pela sua IDE de preferencia ou atraves do terminal caso sua maquina tenha maven instalado lançando o comando a seguir no root do projeto
+
+~~~
+mvn spring-boot:run
+~~~
 
 ### :pushpin: Desafios:
 
@@ -23,7 +28,6 @@
     - [x] Atualização parcial de veiculos
     - [x] Deletar cadastro de veiculos
     - [x] Busca de veiculos cadastrados com filtros
-    - [ ] Implementação de testes unitários
 
 ### :bookmark_tabs: Funcionalidades
 
