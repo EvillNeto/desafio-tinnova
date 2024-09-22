@@ -39,6 +39,7 @@ spring.datasource.url=jdbc:h2:mem:desafio
 spring.datasource.username=sa
 spring.datasource.password=
 ~~~
+![Configuração h2](https://i.imgur.com/y1ADfuL.png)
 - A api é dividida em duas partes: v1 e v2 
 - A v1 é dedicada ao Desafio de cadastro de veiculos.
 - A v2 é dedicada para os desafio de logica.
