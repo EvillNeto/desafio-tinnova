@@ -20,6 +20,7 @@ import dev.evilasio.desafio_tinnova.domain.dto.VehicleDto;
 import dev.evilasio.desafio_tinnova.domain.filter.VehicleFilter;
 import dev.evilasio.desafio_tinnova.domain.form.VehicleForm;
 import dev.evilasio.desafio_tinnova.service.v1.VehicleService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -30,6 +31,7 @@ public class VeiculoController {
 
     private final VehicleService vehicleService;
 
+    @Operation(summary = "Busca paginada de veiculos", description = "Recebe valores de filtro e paginação. Retorna uma pagina filtrada dos veiculos registrados")
     @GetMapping("/veiculos")
     public ResponseEntity<Page<VehicleDto>> getAll(@ParameterObject VehicleFilter filter,
             @ParameterObject @PageableDefault(page = 0, size = 20) Pageable pageable) {
@@ -37,26 +39,31 @@ public class VeiculoController {
         return ResponseEntity.ok(VehicleDto.toDto(vehicleService.getAll(pageable, filter)));
     }
 
+    @Operation(summary = "Busca veiculo por id")
     @GetMapping("/veiculos/{id}")
     public ResponseEntity<VehicleDto> getVeiculo(@PathVariable Long id) {
         return ResponseEntity.ok(VehicleDto.toDto(vehicleService.getVeliculo(id)));
     }
 
+    @Operation(summary = "Cadastro de veiculo", description = "Recebe formulario de cadastro. Salva veiculo no banco com os dados do formulario")
     @PostMapping("/veiculos")
     public ResponseEntity<VehicleDto> register(@RequestBody @Valid VehicleForm form) {
         return ResponseEntity.status(HttpStatus.CREATED).body(VehicleDto.toDto(vehicleService.register(form)));
     }
 
+    @Operation(summary = "Atualização completa de veiculo por id", description = "Recebe o id do veiculo e o formulario de cadastro. Subistitui todos os valors da entidade de id informado")
     @PutMapping("/veiculos/{id}")
     public ResponseEntity<VehicleDto> fullUpdate(@PathVariable Long id, @RequestBody @Valid VehicleForm form) {
         return ResponseEntity.ok(VehicleDto.toDto(vehicleService.fullUpdate(id, form)));
     }
 
+    @Operation(summary = "Atualização parcial de veiculo por id", description = "Recebe o id do veiculo e o formulario de cadastro. Subistitui os valors não nulos do formulario na entidade de id informado")
     @PatchMapping("/veiculos/{id}")
     public ResponseEntity<VehicleDto> partialUpdate(@PathVariable Long id, @RequestBody VehicleForm form) {
         return ResponseEntity.ok(VehicleDto.toDto(vehicleService.partialUpdate(id, form)));
     }
 
+    @Operation(summary = "Deleta veiculo por id")
     @DeleteMapping("/veiculos/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         vehicleService.delete(id);
