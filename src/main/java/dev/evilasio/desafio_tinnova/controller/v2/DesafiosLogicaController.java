@@ -38,9 +38,9 @@ public class DesafiosLogicaController {
     }
 
     @PostMapping("/multiplos")
-    public ResponseEntity<Object> multiplos() {
+    public ResponseEntity<Object> multiplos(@RequestParam int valorFinal) {
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(desafiosService.multiplos(valorFinal));
     }
 
 }

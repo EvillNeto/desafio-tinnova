@@ -10,7 +10,7 @@ public class DesafiosServiceImpl implements DesafiosService {
 
     @Override
     public VotosDto votosLogic(VotosForm form) {
-        
+
         Integer total = form.generateTotal();
 
         return new VotosDto(porcentagem(form.getValidos(), total), porcentagem(form.getBrancos(), total),
@@ -42,13 +42,27 @@ public class DesafiosServiceImpl implements DesafiosService {
 
     @Override
     public int fatorial(int valor) {
-        int result=1;
 
-        while (valor>0) {
-            result*=valor;
+        int result = 1;
+
+        while (valor > 0) {
+            result *= valor;
             valor--;
         }
-        
+        return result;
+    }
+
+    @Override
+    public int multiplos(int valor) {
+        int result = 0;
+
+        while (valor > 0) {
+
+            if (valor % 3 == 0 || valor % 5 == 0) {
+                result += valor;
+            }
+            valor--;
+        }
         return result;
     }
 }

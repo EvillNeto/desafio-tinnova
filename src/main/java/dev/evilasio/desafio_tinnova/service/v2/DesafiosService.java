@@ -10,4 +10,6 @@ public interface DesafiosService {
     public int[] bubbleSort(int[] intArray);
 
     public int fatorial(int valor);
+
+    public int multiplos(int valor);
 }
